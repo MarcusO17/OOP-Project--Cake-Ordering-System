@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = Untitled3.o CakeOrder.o Customer.o LinkedList.o main.o
-LINKOBJ  = Untitled3.o CakeOrder.o Customer.o LinkedList.o main.o
+OBJ      = CakeOrder.o Customer.o "../Assignment\ NEw/main.o" "../Assignment\ NEw/LinkedList.o"
+LINKOBJ  = CakeOrder.o Customer.o "../Assignment NEw/main.o" "../Assignment NEw/LinkedList.o"
 LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -24,17 +24,14 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-Untitled3.o: Untitled3.cpp
-	$(CPP) -c Untitled3.cpp -o Untitled3.o $(CXXFLAGS)
-
 CakeOrder.o: CakeOrder.cpp
 	$(CPP) -c CakeOrder.cpp -o CakeOrder.o $(CXXFLAGS)
 
 Customer.o: Customer.cpp
 	$(CPP) -c Customer.cpp -o Customer.o $(CXXFLAGS)
 
-LinkedList.o: LinkedList.cpp
-	$(CPP) -c LinkedList.cpp -o LinkedList.o $(CXXFLAGS)
+"../Assignment\ NEw/main.o": ../Assignment\ NEw/main.cpp
+	$(CPP) -c "../Assignment NEw/main.cpp" -o "../Assignment NEw/main.o" $(CXXFLAGS)
 
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+"../Assignment\ NEw/LinkedList.o": ../Assignment\ NEw/LinkedList.cpp
+	$(CPP) -c "../Assignment NEw/LinkedList.cpp" -o "../Assignment NEw/LinkedList.o" $(CXXFLAGS)
