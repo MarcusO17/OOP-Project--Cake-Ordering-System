@@ -103,11 +103,13 @@ bool LinkedList::remove(int position) {
 
 bool LinkedList::displayAll() {
 	Node* curr;
+	Order temp;
 	curr = head_ptr;
 	while (curr != NULL) {
-		Order temp = curr->data;
+		temp = curr->data;
 		std::cout << temp.toString() << std::endl;
 		curr = curr->next;
+		
 	}
 	return true;
 }

@@ -48,7 +48,8 @@ void Order::setQty(int q) {
 }
 
 std::string Order::toString() {
-	return "OrderID: ";
+	return "OrderID: " + OrderID + "\n" 
+		  +"Name : ";
 }
 
 

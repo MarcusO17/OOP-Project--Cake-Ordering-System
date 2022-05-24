@@ -37,16 +37,18 @@ using namespace std;
 	return temp; */
 
 int main() {
-	Order temp;
+	Order temp1,temp2,temp3;
 	LinkedList orderList;
-	temp.setOrderID("10000");
+	temp1.setOrderID("10000");
+	temp2.setOrderID("90000");
+	temp3.setOrderID("30000");
 
-	orderList.insert(1, temp);
-	orderList.insert(2, temp);
-	orderList.insert(3, temp);
-	orderList.insert(4, temp);
-	 
-	orderList.insert(5, temp);
+	orderList.insert(1, temp1);
+	orderList.insert(2, temp2);
+	orderList.insert(3, temp3);
+	orderList.insert(4, temp1);
+	orderList.insert(5, temp2);
+	
 	orderList.displayAll();
 
 	
