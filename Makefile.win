@@ -1,15 +1,15 @@
-# Project: Assignment
+# Project: AssignmentGroup
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = Customer.o LinkedList.o main.o Cake.o Order.o
-LINKOBJ  = Customer.o LinkedList.o main.o Cake.o Order.o
+OBJ      = main.o Cake.o Customer.o Order.o LinkedList.o
+LINKOBJ  = main.o Cake.o Customer.o Order.o LinkedList.o
 LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = AssignmentNew.exe
+BIN      = AssignmentGroup.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -24,17 +24,17 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-Customer.o: Customer.cpp
-	$(CPP) -c Customer.cpp -o Customer.o $(CXXFLAGS)
-
-LinkedList.o: LinkedList.cpp
-	$(CPP) -c LinkedList.cpp -o LinkedList.o $(CXXFLAGS)
-
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
 Cake.o: Cake.cpp
 	$(CPP) -c Cake.cpp -o Cake.o $(CXXFLAGS)
 
+Customer.o: Customer.cpp
+	$(CPP) -c Customer.cpp -o Customer.o $(CXXFLAGS)
+
 Order.o: Order.cpp
 	$(CPP) -c Order.cpp -o Order.o $(CXXFLAGS)
+
+LinkedList.o: LinkedList.cpp
+	$(CPP) -c LinkedList.cpp -o LinkedList.o $(CXXFLAGS)

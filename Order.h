@@ -6,36 +6,37 @@
 
 class Order
 {
-	private:
-		int OrderID;
-		double UnitPrice;
-		int Qty;
-	
-		
-		
-	public:
-		Customer Cust;
-		Cake cake;
-		
-		
-		//Constructor
-		Order();
-		Order(int,double,int,Customer,Cake);
-		
-		//Getter
-		int getOrderID();
-		double getUnitPrice();
-		int getQty();
-		
-		//Setter
-		void setOrderID(int);
-		void setUnitPrice(double);
-		void setQty(int);
-		
-		
-		
-		
-		
+private:
+	std::string OrderID;
+	double UnitPrice;
+	int Qty;
+
+
+
+public:
+	Customer Cust;
+	Cake cake;
+
+
+	//Constructor
+	Order();
+	Order(std::string, double, int, Customer, Cake);
+
+	//Getter
+	std::string getOrderID();
+	double getUnitPrice();
+	int getQty();
+
+	//Setter
+	void setOrderID(std::string);
+	void setUnitPrice(double);
+	void setQty(int);
+
+	std::string toString();
+
+
+
 };
 
 #endif
+	

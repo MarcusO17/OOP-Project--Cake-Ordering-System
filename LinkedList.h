@@ -1,27 +1,29 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
+#include "Order.h"
 
-struct Node{
-			int item;
-			Node *next;
+struct Node {
+	Order data;
+	Node* next;
 };
 
-class LinkedList{
-	
-	private:
-	
-		Node *head_ptr;
-		Node *tail_ptr;
-		int numOfItem;	
-		
-		
-	public:
-		LinkedList();
-		bool isEmpty();
-		int size();
-		bool insert(int,int);
-		bool remove(int);
-		bool displayAll();
+class LinkedList {
+
+private:
+
+	Node* head_ptr;
+	Node* tail_ptr;
+	int numOfItem;
+
+
+public:
+	LinkedList();
+	bool isEmpty();
+	int size();
+	bool insert(int, Order);
+	bool remove(int);
+	Node* getHeadPointer();
+	bool displayAll();
 };
 
 

@@ -1,5 +1,8 @@
 #include "LinkedList.h"
 #include <iostream>
+#include "Order.h"
+#include <string>
+
 
 LinkedList::LinkedList() {
 	head_ptr = NULL;
@@ -17,14 +20,14 @@ int LinkedList::size() {
 	return numOfItem;
 }
 
-bool LinkedList::insert(int position ,int data ) {
+bool LinkedList::insert(int position, Order obj) {
 	//position validation
 	if (position > numOfItem + 1 || position < 1) {
 		return false;
 	}
 	// create new node
-	Node *newNode = new Node;
-	newNode->item = data;
+	Node* newNode = new Node;
+	newNode->data = obj;
 	newNode->next = NULL; //NULL
 
 	//insert elements as head
@@ -33,22 +36,23 @@ bool LinkedList::insert(int position ,int data ) {
 		head_ptr = newNode;
 		if (tail_ptr == NULL)	// empty list
 			tail_ptr = newNode;
-	} else {
-		Node *curr = head_ptr;
+	}
+	else {
+		Node* curr = head_ptr;
 		//navigate elements to a node before the insertion point
-		for (int i=1; i<position-1; i++)
+		for (int i = 1; i < position - 1; i++)
 			curr = curr->next;
 		//insert the new element in the list
 		newNode->next = curr->next;
 		curr->next = newNode;
 
 		//change tail_ptr if insert as last node
-		if (position == numOfItem+1) {
+		if (position == numOfItem + 1) {
 			tail_ptr = newNode;
 		}
 	}
 
-	numOfItem +=1;
+	numOfItem += 1;
 	return true;
 
 }
@@ -59,7 +63,7 @@ bool LinkedList::remove(int position) {
 	}
 
 	//delete ptr start from 1st node
-	Node *delPtr = head_ptr;
+	Node* delPtr = head_ptr;
 
 
 
@@ -69,11 +73,12 @@ bool LinkedList::remove(int position) {
 
 		if (numOfItem == 1)	// if this is the only item in the list
 			tail_ptr = NULL;
-	} else {
+	}
+	else {
 		//Navigate to deleted node and keep track the node before deletion
-		Node *prevPtr = NULL;
+		Node* prevPtr = NULL;
 
-		for (int i=1 ;  i< position ; i++) {
+		for (int i = 1; i < position; i++) {
 			prevPtr = delPtr;
 			delPtr = delPtr->next;
 		}
@@ -97,13 +102,14 @@ bool LinkedList::remove(int position) {
 
 
 bool LinkedList::displayAll() {
-	Node *curr;
+	Node* curr;
 	curr = head_ptr;
 	while (curr != NULL) {
-		std::cout << curr->item <<std::endl;
+		Order temp = curr->data;
+		std::cout << temp.toString() << std::endl;
 		curr = curr->next;
 	}
-
+	return true;
 }
 
 
